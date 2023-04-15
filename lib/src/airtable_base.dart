@@ -20,11 +20,12 @@ class Airtable {
   /// [Returns List of updated records]
   Future<List<AirtableRecord>> getAllRecords(
     String recordName, {
+    Map<String, String?>? queryParams,
     int? maxRecords,
     int? pageSize,
   }) async {
     final response = await client.get(
-      _recordApiUrl(recordName),
+      _recordApiUrl(recordName, queryParams: queryParams),
       headers: _headers,
     );
 
