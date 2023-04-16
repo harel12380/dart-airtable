@@ -119,7 +119,7 @@ class Airtable {
   Future<List<AirtableRecord>?> getRecordsFilterByFormula(
     String recordName,
     String filter,
-    Map<String, String?>? queryParams,
+    {Map<String, String?>? queryParams,}
   ) async {
     final response = await client.get(
       _recordApiUrl(recordName, queryParams: {
